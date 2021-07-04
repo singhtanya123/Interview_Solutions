@@ -1,0 +1,27 @@
+import math #math module for using sqrt method
+class Point:
+    def __init__(self,x,y): #constructor
+        self.x=x
+        self.y=y
+#function to get calculated distance and compare 
+    def Cal_length(p1,p2,p3,p4): 
+        d1=distance(p1,p2)
+        d2=distance(p2,p3)
+        d3=distance(p3,p4)
+        d4=distance(p1,p4)
+        print(d1,d2,d3,d4)
+        if(d1==d2==d3==d4):
+            if(d1*math.sqrt(2)):
+                print("Square")
+        else: 
+            print("Not a square")
+#function to calculate 
+def distance(p,q):
+    return (abs((p.x-q.x)+(p.y-q.y)))
+
+if __name__=="__main__":    #right now taking them at different sets
+    p1=Point(0,0)
+    p2=Point(10,0)
+    p3=Point(20,20)
+    p4=Point(0,20)    #calculate length of every two points
+    Point.Cal_length(p1,p2,p3,p4)
