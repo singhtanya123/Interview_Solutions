@@ -1,4 +1,4 @@
-#How to check if given four points form a square
+#Question : How to check if given four points form a square
 
 import math #math module for using sqrt method
 class Point:
