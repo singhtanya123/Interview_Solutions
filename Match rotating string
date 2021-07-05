@@ -1,0 +1,11 @@
+#Question : Check if a string can be obtained by rotating another string 2 places
+
+string1="amazon"
+string2="onamaz"
+s=""
+for i in range(len(string2)):
+    s= string2[i:]+string2[:i]
+    print("firstpart :",string2[i:],"lastpart :",string2[:i],"total :",s) # to check the process.
+    if(s==string1):
+        print("Yes")
+        break;
