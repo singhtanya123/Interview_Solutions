@@ -1,0 +1,25 @@
+#Question : Find if two rectangles overlap
+
+
+class Rectangle:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+        
+    def overlap(l1,r1,l2,r2):
+        if (l1.x==r1.x or l2.x==r2.x):
+            return "False1"
+        if r1.x<l2.x or r2.x<l1.x:
+            return ("False2")
+        elif r1.y>l2.y or r2.y>l1.y:
+            return("False3")
+        else:
+            return("Overlap")
+
+l1=Rectangle(0,10)
+r1=Rectangle(10,0)
+l2=Rectangle(0,0)
+r2=Rectangle(-10,-10)
+
+print(Rectangle.overlap(l1,r1,l2,r2))
+        
