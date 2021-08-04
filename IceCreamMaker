@@ -1,0 +1,103 @@
+//object has arguments as arrays.
+let stock = {
+  Fruits: ["pineapple", "grapes", "strawberry", "kiwi"],
+  liquid: ["water", "ice"],
+  holder: ["cone", "cup", "stick"],
+  toppings: ["chocolate", "candies"]
+};
+
+let order = (Fruits_name, call_production) => {
+  //take order for by index
+  setTimeout(() => {
+    console.log(`${stock["Fruits"][Fruits_name]} flavour ice cream ordered`);
+    call_production(`${stock["Fruits"][Fruits_name]}`);
+  }, 2000); //access which flavour is on index given.
+};
+
+let production = (name) => {
+  //Order Recieved at 0 sec
+  setTimeout(() => {
+    console.log(`Order Recieved ${name} flavour`);
+    //Fruits chopped in 2 sec.
+    setTimeout(() => {
+      console.log("fruits chopped");
+      //added liquid in 1 sec
+      setTimeout(() => {
+        console.log(`${stock["liquid"][0]} and ${stock.liquid[1]} added`);
+        machinery();
+      }, 1000);
+    }, 2000);
+  }, 0000);
+};
+
+let machinery = () => {
+  setTimeout(() => {
+    console.log(`started machinery`);
+    setTimeout(() => {
+      console.log(`${stock["holder"][0]} is selected`);
+      setTimeout(() => {
+        console.log(`${stock["toppings"][0]} added`);
+        setTimeout(() => {
+          console.log(`Ice cream ready`);
+        }, 2000);
+      }, 3000);
+    }, 2000);
+  }, 1000);
+};
+order(0, production); //calling order to give order
+
+/*---------------------------------------------
+OR -- take everything order from customer
+---------------------------------------*/
+//object has argyments as arrays.
+let stock = {
+  Fruits: ["pineapple", "grapes", "strawberry", "kiwi"],
+  liquid: ["water", "ice"],
+  holder: ["cone", "cup", "stick"],
+  toppings: ["chocolate", "candies"]
+};
+
+let order = (Fruits_name, holder_name, topping_name, call_production) => {
+  //take order for by index
+  setTimeout(() => {
+    console.log(`${stock["Fruits"][Fruits_name]} flavour ice cream ordered`);
+    call_production(
+      `${stock["Fruits"][Fruits_name]}`,
+      `${stock["Fruits"][holder_name]}`,
+      `${stock["Fruits"][topping_name]}`
+    );
+  }, 2000); //access which flavour is on index given.
+};
+
+let production = (f_name, h_name, top_name) => {
+  //Order Recieved at 0 sec
+  setTimeout(() => {
+    console.log(`Order Recieved ${name} flavour`);
+    //Fruits chopped in 2 sec.
+    setTimeout(() => {
+      console.log("fruits chopped");
+      //added liquid in 1 sec
+      setTimeout(() => {
+        console.log(`${stock["liquid"][0]} and ${stock.liquid[1]} added`);
+        machinery(h_name, top_name);
+      }, 1000);
+    }, 2000);
+  }, 0000);
+};
+
+let machinery = (h_name, top_name) => {
+  setTimeout(() => {
+    console.log(`started machinery`);
+    setTimeout(() => {
+      console.log(`${h_name} is selected`);
+      setTimeout(() => {
+        console.log(`${top_name}  added`);
+        setTimeout(() => {
+          console.log(`Ice cream ready`);
+        }, 2000);
+      }, 3000);
+    }, 2000);
+  }, 1000);
+};
+order(0, 2, 0, production); //calling order to give order
+
